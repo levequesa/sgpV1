@@ -1,4 +1,3 @@
-<%@page import="wsc.sgpV1.entite.Collaborateur"%>
 <%@page import="java.util.List"%>
 <%@page import="org.apache.taglibs.standard.tag.el.core.ForEachTag"%>
 
@@ -14,13 +13,15 @@
 		<h1>les collaborateurs</h1>
 		<ul>
 			<%
-				List<Collaborateur> listCollaborateurs= (List<Collaborateur>) request.getAttribute("listCollab");
-				for (Collaborateur c : listCollaborateurs) {
+				List<String> listeNoms= (List<String>) request.getAttribute("listeNoms");
+				for (String nom : listeNoms) {
 			%>
-					<li> <%=c.getNom()%></li>
+					<li> <%=nom%></li>
 			<%
 				}
 			%>	
+				
+			
 		</ul>
 
 	</body>
